@@ -1,0 +1,6 @@
+options:
+  name:
+    type: string
+    description: |
+        Unique name for the relay, scoped to the etcd cluster shared among the
+        linked models.
