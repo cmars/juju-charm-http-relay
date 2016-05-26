@@ -7,12 +7,12 @@ subordinate: false
 requires:
   etcd:
     interface: etcd
-  reverseproxy:
+  backend:
     interface: http
-    relay: true
+    relay: some-api
 provides:
-  website:
+  frontend:
     interface: http
-    relay: true
+    relay: some-api
 series:
   - xenial
