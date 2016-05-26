@@ -3,12 +3,12 @@ _fail:
 $(error JUJU_REPOSITORY is undefined)
 endif
 
-all: $(JUJU_REPOSITORY)/trusty/http-relay
+all: $(JUJU_REPOSITORY)/xenial/http-relay
 
-$(JUJU_REPOSITORY)/trusty/http-relay:
-	LAYER_PATH=$(shell pwd)/layers INTERFACE_PATH=$(shell pwd)/interfaces charm build -s trusty
+$(JUJU_REPOSITORY)/xenial/http-relay:
+	LAYER_PATH=$(shell pwd)/layers INTERFACE_PATH=$(shell pwd)/interfaces charm build -s xenial
 
 clean:
-	$(RM) -r $(JUJU_REPOSITORY)/trusty/http-relay
+	$(RM) -r $(JUJU_REPOSITORY)/xenial/http-relay
 
 .PHONY: all clean
