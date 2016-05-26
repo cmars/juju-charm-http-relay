@@ -32,11 +32,11 @@ def create_relay_hooks(endpoint, relay_name, side=None):
         'side': 'side',
     })
     render(source='changed.py',
-        target=os.path.join(hookenv.charm_dir(), 'hooks', '%s-relation-changed'),
+        target=os.path.join(hookenv.charm_dir(), 'hooks', '%s-relation-changed' % (endpoint)),
         perms=0o755,
         context=context)
     render(source='departed.py',
-        target=os.path.join(hookenv.charm_dir(), 'hooks', '%s-relation-departed'),
+        target=os.path.join(hookenv.charm_dir(), 'hooks', '%s-relation-departed' % (endpoint)),
         perms=0o755,
         context=context)
 
@@ -50,3 +50,13 @@ def config_changed():
        return
     hookenv.status_set('maintenance', 'configured')
     set_state('relay.available')
+
+
+@when('relay.available')
+def poll_remote():
+    # for each role & endpoint with a relay:
+    #   etcdctl get /{{ relay_name }}/{{ role }}
+    #   compare with unitdata copy, if changed:
+    #     relation_set the opposite role locally with remote data
+    # matching impedence differences between local and remote relation data structures...?
+    pass
