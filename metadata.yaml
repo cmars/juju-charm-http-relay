@@ -1,8 +1,4 @@
 name: http-relay
-summary: Cross-model relay charm for http endpoints
-maintainer: Casey Marshall <casey.marshall@canonical.com>
-description: |
-  Cross-model relay charm for http endpoints.
 subordinate: false
 requires:
   frontend:
