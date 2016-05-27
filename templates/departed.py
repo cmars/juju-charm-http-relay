@@ -13,4 +13,4 @@ if __name__ == '__main__':
     env = {}
     env.update(os.environ)
     env['ETCDCTL_ENDPOINT'] = hookenv.config().get('etcd')
-    check_call(['etcdctl', 'rm', '/{{ relay_name }}/{{ side }}'], env=env)
+    check_call(['etcdctl', 'rm', '/{{ relay_name }}/{{ counterpart }}'], env=env)

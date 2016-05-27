@@ -7,12 +7,10 @@ subordinate: false
 requires:
   etcd:
     interface: etcd
-  backend:
-    interface: http
-    relay: some-api
-provides:
   frontend:
     interface: http
     relay: some-api
-series:
-  - xenial
+provides:
+  backend:
+    interface: http
+    relay: some-api

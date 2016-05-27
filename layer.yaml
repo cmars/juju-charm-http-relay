@@ -1,2 +1,5 @@
 includes:
  - layer:basic
+ignore:
+ - .*.swp
+ - demo
