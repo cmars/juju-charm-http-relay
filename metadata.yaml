@@ -5,8 +5,6 @@ description: |
   Cross-model relay charm for http endpoints.
 subordinate: false
 requires:
-  etcd:
-    interface: etcd
   frontend:
     interface: http
     relay: some-api

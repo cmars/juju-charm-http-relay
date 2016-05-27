@@ -13,4 +13,7 @@ if __name__ == '__main__':
     env = {}
     env.update(os.environ)
     env['ETCDCTL_ENDPOINT'] = hookenv.config().get('etcd')
-    check_call(['etcdctl', 'rm', '/{{ relay_name }}/{{ counterpart }}'], env=env)
+    try:
+        check_call(['etcdctl', 'rm', '/{{ relay_name }}/{{ role }}'], env=env)
+    except Exception as e:
+        hookenv.log("error removing remote relation data: %s" % (e))
