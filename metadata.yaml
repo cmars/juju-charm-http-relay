@@ -1,5 +1,6 @@
 name: http-relay
-subordinate: false
+summary: cross-model relay for http interface
+description: cross-model relay for http interface
 requires:
   frontend:
     interface: http

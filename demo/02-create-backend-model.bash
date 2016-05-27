@@ -11,7 +11,7 @@ fi
 juju add-model backend  # party
 juju deploy -m backend wordpress
 juju deploy -m backend mysql
-juju deploy -m backend $JUJU_REPOSITORY/trusty/http-relay --series trusty
+juju deploy -m backend $JUJU_REPOSITORY/xenial/http-relay --series xenial
 juju set-config -m backend http-relay etcd=${etcd_addr}
 juju add-relation -m backend wordpress mysql
 juju add-relation -m backend wordpress http-relay:frontend  # relay is a "frontend"

@@ -10,6 +10,6 @@ fi
 
 juju add-model frontend  # business
 juju deploy -m frontend haproxy
-juju deploy -m frontend $JUJU_REPOSITORY/trusty/http-relay --series trusty
+juju deploy -m frontend $JUJU_REPOSITORY/xenial/http-relay --series xenial
 juju set-config -m frontend http-relay etcd=${etcd_addr}
 juju add-relation -m frontend haproxy http-relay:backend  # relay is a "backend"
