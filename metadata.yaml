@@ -9,3 +9,5 @@ provides:
   backend:
     interface: http
     relay: some-api
+series:
+  - xenial
